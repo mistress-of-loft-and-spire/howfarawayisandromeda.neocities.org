@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="How far away from us is the Andromeda Galaxy right now?">
+    <meta name="author" content="@notbanachtarski">
+	
+	<meta name="keywords" content="andromeda, milky way, galaxy, universe, stars, nasa, m31, messier 31, distance, calculator, countdown, milkdromeda, milkomeda, merging, earth, sun, local group, kilometers, far"/>
+
+    <title>How far away is Andromeda?</title>
+	
+	<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="img/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+	<meta name="msapplication-TileColor" content="#dc4278">
+	<meta name="msapplication-TileImage" content="img/mstile-144x144.png">
+	<meta name="theme-color" content="#dc4278">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="navbar navbar-right navbar-main">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">?</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div id="howfar">
+						
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>About</h2>
+				
+				<p class="align-left">
+				The <i>Andromeda Galaxy (aka Messier 31)</i> has been estimated to be somewhere around 2.5 million lightyears away from us here on Earth. Due to its relative size and proximity to the Milky Way, Andromeda can actually be observed with the naked eye in the night sky.</br></br>
+				Also because of its blueshift we can determine that it is approaching our galaxy at around 110 kilometers per second.</br></br>
+				That means that in around 4 to 6 billion years (or 4 to 6 gigayears, if you want to be cool), Andromeda and the Milky Way will collide (or rather merge) with each other, forming a giant elliptical galaxy often referred to as <i>Milkdromeda</i>.</br></br>
+				</p>
+				
+				<h4>References</h4>
+				
+				<p>
+				<a href="https://youtu.be/7uiv6tKtoKg?t=2m40s">Vsauce: What Will We Miss?</a></br></br>
+				<a href="https://en.wikipedia.org/wiki/Andromeda%E2%80%93Milky_Way_collision">Wikipedia: Andromeda–Milky Way collision</a></br></br>
+				<a href="http://adsabs.harvard.edu/abs/2012ApJ...753....9V">The Astrophysical Journal: The M31 Velocity Vector. III.</a></br></br>
+				</p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/notbanachtarski" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter Bot (soon)</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Code on Github</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Made by <a href="https://twitter.com/notbanachtarski">@notbanachtarski</a>
+                </p>
+        </div>
+    </footer>
+	
+	
+<script>
+
+var now;
+var start = new Date("2012-05-31").getTime();
+
+var distanceFirstPart;  //too large, whoops
+var distanceRest;
+
+calculate();
+
+displayResult();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  calculate();
+
+  displayResult();
+
+}, 1000);
+
+function calculate() {
+	now = new Date().getTime();
+
+	distanceFirstPart = 2403025540035522;  //too large, whoops
+	distanceRest = 10000;
+
+	elapsed = Math.round((now - start) / 1000) * 110;
+
+	distanceFirstPart -= Math.floor(elapsed / 10000);
+	distanceRest -= Math.round(((elapsed / 10000) % 1) * 10000);
+}
+
+function displayResult() {
+  // Display the result in the element
+  if (distanceFirstPart < 0) {
+		//countdown finished!
+		clearInterval(x);
+		document.getElementById("howfar").innerHTML = "><h1 class='km'>WELCOME TO MILKDROMEDA!</h1>";
+  }
+  else
+  {
+	document.getElementById("howfar").innerHTML = "<p class='intro-text'>The Andromeda Galaxy is</p><h1 class='km longword'>" +  distanceFirstPart + pad(distanceRest, 4) + "<span class='smallword'>km</span></h1><p class='intro-text'>away from us right now.<br><span class='smallword'>± 1.04 × 10<sup>18</sup> km</span></p>";
+	
+	
+  }
+}
+
+function pad(num, size) { //add leading zero
+    var s = "000000" + num;
+    return s.substr(s.length-size);
+}
+</script>
+	
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+</body>
+
+</html>
