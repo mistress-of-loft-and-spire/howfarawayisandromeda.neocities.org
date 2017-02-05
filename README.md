@@ -1,7 +1,7 @@
 🌌
 __How far away from us is the Andromeda Galaxy right now?__
 
-Find out here: [howfarawayisandromeda.github.io](https://howfarawayisandromeda.github.io/)
+Find out here: [howfarawayisandromeda.neocities.org](https://howfarawayisandromeda.neocities.org/)
 
 ## About
 
