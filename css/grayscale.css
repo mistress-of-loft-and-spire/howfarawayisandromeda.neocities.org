@@ -101,7 +101,7 @@ a:focus {
   text-align: center;
   color: white;
   background: url(../img/bg.jpg) no-repeat center center scroll;
-  background-color: black;
+  background-color: #dc4278;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
